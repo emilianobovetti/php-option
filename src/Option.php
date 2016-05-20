@@ -234,40 +234,6 @@ abstract class Option
     abstract public function __isset($name);
 
     /**
-     * call magic method.
-     *
-     * If the Option is a Some which contains an
-     * array or an object, it looks for the given
-     * key or property. If it exists and is not null
-     * return this value, even if the method is called
-     * without parameters.
-     *
-     * If the Option is a None, if the given key or property
-     * does not exists or is null return the first
-     * non-null argument.
-     * If all arguments are null return null.
-     * If there are no arguments raise a NoneValueException.
-     *
-     *
-     * E.g.
-     *
-     * <code>
-     *  $array = [ 'defined' => [ 'key' => 0 ] ];
-     *  $option = Option::create($array);
-     *  $option->defined->key(); // 0
-     *
-     *  Option::create(null)->undefined->key(1); // 1
-     *  Option::create(null)->undefined->key();  // NoneValueException
-     * </code>
-     *
-     * @throws NoneValueException
-     * @param string $name Key or property name.
-     * @param mixed[] $arguments
-     * @return mixed
-     */
-    abstract public function __call($name, $arguments);
-
-    /**
      * invoke magic method.
      *
      * Make the Option callable.
@@ -295,23 +261,6 @@ abstract class Option
      * @return mixed
      */
     abstract public function __invoke($default = EmptyArg::class);
-
-    /**
-     * Given the array of arguments passed to the call magic method
-     * return the first non null argument or null if all arguments
-     * are null or arguments array is empty.
-     *
-     * @param mixed[] $arguments
-     * @return mixed
-     */
-    protected static function filterMagicCallArgs($arguments)
-    {
-        $arguments = array_filter($arguments, function($value) {
-            return $value !== null;
-        });
-
-        return count($arguments) > 0 ? current($arguments) : null;
-    }
 }
 
 Option::init();

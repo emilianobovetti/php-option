@@ -94,17 +94,6 @@ class Some extends Option
         return $this->getPropertyOrKey($name) !== null;
     }
 
-    public function __call($name, $arguments)
-    {
-        $value = $this->getPropertyOrKey($name);
-
-        if ($value === null && count($arguments) == 0) {
-            throw new NoneValueException('Dynamic access to undefined property without parameters');
-        }
-
-        return $value === null ? self::filterMagicCallArgs($arguments) : $value;
-    }
-
     public function __invoke($default = EmptyArg::class)
     {
         return $this->value;

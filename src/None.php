@@ -72,15 +72,6 @@ class None extends Option
         return false;
     }
 
-    public function __call($name, $arguments)
-    {
-        if (count($arguments) == 0) {
-            throw new NoneValueException('Dynamic access to undefined property without parameters');
-        }
-
-        return self::filterMagicCallArgs($arguments);
-    }
-
     public function __invoke($default = EmptyArg::class)
     {
         if ($default === EmptyArg::class) {
