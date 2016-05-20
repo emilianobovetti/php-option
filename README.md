@@ -5,6 +5,10 @@ Tired of `Trying to get property of non-object`?
 
 This is a porting of the [option type](https://en.wikipedia.org/wiki/Option_type) in PHP.
 
+## Installation
+
+> composer require emilianobovetti/php-option
+
 ## Creating Options
 
 You can create options through constructors (e.g. `new Some(0)`, `new None`) or using facade methods of the *Option* class.
