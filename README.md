@@ -9,6 +9,13 @@ This is a porting of the [option type](https://en.wikipedia.org/wiki/Option_type
 
 > composer require emilianobovetti/php-option
 
+Import library:
+```PHP
+use EmilianoBovetti\PhpOption\Option;
+// if you need direct access to Some class
+use EmilianoBovetti\PhpOption\Some;
+```
+
 ## Creating Options
 
 You can create options through constructors (e.g. `new Some(0)`, `new None`) or using facade methods of the *Option* class.
