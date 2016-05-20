@@ -9,8 +9,8 @@ This is a porting of the [option type](https://en.wikipedia.org/wiki/Option_type
 
 > composer require emilianobovetti/php-option
 
-Import library:
 ```PHP
+// import library
 use EmilianoBovetti\PhpOption\Option;
 // if you need direct access to Some class
 use EmilianoBovetti\PhpOption\Some;
@@ -90,6 +90,11 @@ Option::create($user)->some->property
 
 If `$user->some->property` exists and is not null, no methods get called.
 If the first callback gets called and returns a non-null value, the following functions aren't executed, and so on...
+
+How to output `Option`s?
+```PHP
+echo Option::create($user)->address->city->name; // will print city name or empty string
+```
 
 ## Option methods
 
