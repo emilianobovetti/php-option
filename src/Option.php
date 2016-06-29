@@ -38,6 +38,16 @@ abstract class Option
     }
 
     /**
+     * Get a Some instance.
+     *
+     * @return Some
+     */
+    public static function some($value)
+    {
+        return new Some($value);
+    }
+
+    /**
      * Create new Option object.
      *
      * By default it creates a None if $value is null,
@@ -260,7 +270,7 @@ abstract class Option
      * @param string $default
      * @return mixed
      */
-    abstract public function __invoke($default = EmptyArg::class);
+    abstract public function __invoke($default = null);
 }
 
 Option::init();

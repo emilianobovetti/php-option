@@ -72,9 +72,9 @@ class None extends Option
         return false;
     }
 
-    public function __invoke($default = EmptyArg::class)
+    public function __invoke($default = null)
     {
-        if ($default === EmptyArg::class) {
+        if (func_num_args() == 0) {
             throw new NoneValueException('None invoked without parameter');
         }
 

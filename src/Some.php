@@ -94,7 +94,7 @@ class Some extends Option
         return $this->getPropertyOrKey($name) !== null;
     }
 
-    public function __invoke($default = EmptyArg::class)
+    public function __invoke($default = null)
     {
         return $this->value;
     }
