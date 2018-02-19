@@ -1,7 +1,7 @@
 {
     "name": "emilianobovetti/php-option",
     "description": "Lightweight option in PHP",
-    "license": "GPLv3",
+    "license": "GPL-3.0",
     "keywords": [
         "Option"
     ],
