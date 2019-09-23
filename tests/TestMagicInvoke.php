@@ -19,11 +19,9 @@ class TestMagicInvoke extends BaseTest
         $this->assertSame(0, $option(1));
     }
 
-    /**
-     * @expectedException EmilianoBovetti\PhpOption\NoneValueException
-     */
     public function testMagicInvokeOnNoneWithoutParameter()
     {
+        $this->expectException(EmilianoBovetti\PhpOption\NoneValueException::class);
         $option = $this->none;
         $option();
     }

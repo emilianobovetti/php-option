@@ -5,11 +5,9 @@ use EmilianoBovetti\PhpOption\Some;
 
 class TestGet extends BaseTest
 {
-    /**
-     * @expectedException EmilianoBovetti\PhpOption\NoneValueException
-     */
     public function testGetOnNone()
     {
+        $this->expectException(EmilianoBovetti\PhpOption\NoneValueException::class);
         $this->none->get();
     }
 
