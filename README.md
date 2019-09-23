@@ -169,3 +169,12 @@ $option();  // NoneValueException
 ```
 
 Like getOrElse method `$default` can be a callback or any other PHP value.
+
+## Run tests
+
+```bash
+git clone git@github.com:emilianobovetti/php-option.git
+cd php-option
+composer install
+./vendor/bin/phpunit
+```
